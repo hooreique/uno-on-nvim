@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cp-html": "mkdir -p build && cp src/*.html build/",
+    "build-es": "esbuild --bundle --outfile=build/app.js --sourcemap src/app.ts",
+    "build": "pnpm run cp-html & unocss & pnpm run build-es & wait"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.3",
+    "@unocss/cli": "66.5.10",
+    "@unocss/reset": "66.5.10",
+    "esbuild": "0.27.2",
+    "typescript": "5.9.3",
+    "unocss": "66.5.10"
+  }
+}
